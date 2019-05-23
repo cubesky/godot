@@ -33,7 +33,7 @@ build_script:
   - scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
 
 artifacts:
-  - path: godot\bin\*.exe
+  - path: bin\*.exe
     name: GodotBinary
-  - path: godot\bin\*gdnative_wrapper_code*.lib
+  - path: bin\*gdnative_wrapper_code*.lib
     name: GodotGDNativeWrapper
