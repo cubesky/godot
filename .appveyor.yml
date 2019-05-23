@@ -30,4 +30,8 @@ before_build:
   - git clone https://github.com/Zylann/godot_voxel.git modules/voxel
 
 build_script:
-- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
+  - scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
+
+artifacts:
+  - path: godot\bin\*
+    name: GodotBinary
