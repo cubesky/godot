@@ -31,12 +31,13 @@ before_build:
 
 build_script:
   - scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
-  - dir
+  - md artifacts
+  - copy bin\*.exe artifacts\
+  - copy bin\*gdnative_wrapper_code*.lib artifacts\
   - scons platform=%GD_PLATFORM% tools=no target=%TARGET%
   - dir
+  - 7z a artifacts.zip artifacts
 
 artifacts:
-  - path: bin\*.exe
-    name: GodotBinary
-  - path: bin\*gdnative_wrapper_code*.lib
-    name: GodotGDNativeWrapper
+  - path: artifacts.zip
+    name: GodotArtifacts
