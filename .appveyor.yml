@@ -32,6 +32,8 @@ before_build:
 build_script:
   - scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% debug_symbols=no verbose=yes progress=no gdnative_wrapper=yes
   - dir
+  - scons platform=%GD_PLATFORM% tools=no target=%TARGET%
+  - dir
 
 artifacts:
   - path: bin\*.exe
